@@ -13,7 +13,6 @@ else
 }
 
 }
-
 let x=prompt("please enter an Email");
 EmailValidation(x);
 
