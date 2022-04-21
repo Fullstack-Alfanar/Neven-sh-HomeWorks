@@ -1,20 +1,56 @@
 
+let testarEmail = EmailValid(prompt(" please enter your Email"));
+alert(testarEmail);
 
-function EmailValidation (Email)
+function EmailValid(Email) 
 {
-    const template= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-if(template.test(Email))
-{
-    console.log(" valid Email " +" "+ true);
-}
-else
-{
-    console.log("Invalid Email" + " "+false);
+    let LocShrodeel=0, dot = 0,  c = 0;
+    for (let i = 0; i < Email.length; i++){
+        if (Email[i] == "@") {
+            LocShrodeel = i;
+            c++;
+        }
+        if (Email[i] == " ") {
+            return "false";
+        }
+    }
+   
+       if (Email[0] == "@") {
+        return "false";
+    }
+   
+     if (c != 1){
+          return "false";
+    }
+
+    for (let i = 0; i < Email.length || Email[i]=="@"; i++){
+        if(Email[i]=="?")
+        return "false"
+    }
+    
+    i = 0;
+    for (i = LocShrodeel; i < Email.length; i++) {
+        if (Email[i] == "=") {
+            return "false";
+        }
+        if (Email[i] ==".") {
+            dot++;
+        }
+    }
+    if (dot == 0) {
+        return "false";
+    }
+    for (let i = 0; i < Email.length; i++) {
+        if (Email[i] == "@") {
+            if (i >= 64) {
+                return "false";
+            }
+        }
+    }
+    
+    return "true";
 }
 
-}
-let x=prompt("please enter an Email");
-EmailValidation(x);
 
 
 
