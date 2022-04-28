@@ -1,6 +1,7 @@
 let testarEmail = EmailValid(prompt(" please enter your Email"));
 alert(testarEmail);
 
+
 function EmailValid(Email) 
 {
     let LocShrodeel=0, dot = 0,  c = 0;
