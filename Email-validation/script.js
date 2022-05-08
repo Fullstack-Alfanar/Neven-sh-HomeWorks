@@ -1,6 +1,6 @@
-
 let testarEmail = EmailValid(prompt(" please enter your Email"));
 alert(testarEmail);
+
 
 function EmailValid(Email) 
 {
